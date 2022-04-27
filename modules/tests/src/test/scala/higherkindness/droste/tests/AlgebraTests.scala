@@ -38,13 +38,13 @@ final class AlgebraTests extends Properties("algebras") {
     Arbitrary(Gen.function1(arbitrary[F[S]]).map(GCoalgebra(_)))
 
   include(
-    ArrowTests[GAlgebra[(Int, ?), ?, ?]]
+    ArrowTests[GAlgebra[(Int, ?), *, *]]
       .arrow[Int, Int, Int, Int, Int, Int]
       .all,
     "GAlgebra.")
 
   include(
-    ArrowTests[GCoalgebra[(Int, ?), ?, ?]]
+    ArrowTests[GCoalgebra[(Int, ?), *, *]]
       .arrow[Int, Int, Int, Int, Int, Int]
       .all,
     "GCoalgebra.")

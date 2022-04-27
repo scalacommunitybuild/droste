@@ -171,7 +171,7 @@ object ProjectSyntax {
       Project.any(self)(p)
 
     def collect[U: Monoid, B](pf: PartialFunction[T, B])(
-        implicit U: Basis[ListF[B, ?], U]): U =
+        implicit U: Basis[ListF[B, *], U]): U =
       Project.collect[F, T, U, B](self)(pf)
 
     def contains(c: T)(implicit T: Eq[T]): Boolean =
